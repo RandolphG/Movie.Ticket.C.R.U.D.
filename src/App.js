@@ -1,43 +1,34 @@
 import React, { Component } from "react";
-import Table from "react-bootstrap/Table";
+import "styled-components";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import MoviesPage from "./MoviesPage";
+import MovieDetailsPage from "./MovieDetailsPage";
 
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = { movies: [] };
+    this.state = { movie: null };
   }
-
+  setMovie = movie => {
+    this.setState({ movie: movie });
+  };
   render() {
     return (
-      <div>
-        {this.state.movies[0] && (
-          <Table>
-            <thead>
-              <tr>
-                <th>title</th>
-                <th>rating</th>
-              </tr>
-            </thead>
-            <tbody>
-              {this.state.movies.map(movie => (
-                <tr>
-                  <td>{movie.title}</td>
-                  <td>{movie.mpaa}</td>
-                </tr>
-              ))}
-            </tbody>
-          </Table>
-        )}
-      </div>
+      <Router>
+        <Switch>
+          <Route
+            exact
+            path={"/movies"}
+            render={props => <MoviesPage history={props.history} />}
+          />
+          <Route
+            exact
+            path={"/movies"}
+            render={props => <MovieDetailsPage movie={this.state.movie} />}
+          />
+        </Switch>
+      </Router>
     );
-  }
-
-  async componentDidMount() {
-    const movies = await fetch("http://localhost:3001/movies")
-      .then(res => res.json())
-      .then(data => data.movies);
-    this.setState({ movies });
-    console.log(this.state.movies);
   }
 }
 export default App;
