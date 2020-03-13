@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 
-class MovieDetailsPage extends Component {
+class AddMoviePage extends Component {
   render() {
     return <div></div>;
   }
 }
 
-export default MovieDetailsPage;
+export default AddMoviePage;
