@@ -27,14 +27,9 @@ export const createMovie = movie => {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(movie)
-    // body: JSON.stringify({
-    //   title: movie.title,
-    //   actors: movie.actors,
-    //   mpaa: movie.mpaa
-    // })
-  })
-    .then(res => res.json())
-    .then(data => console.log(data));
+  }).then(res =>
+    res.ok ? console.log("add success") : console.log("add failed")
+  );
 };
 /***
  *
