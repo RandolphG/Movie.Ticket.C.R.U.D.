@@ -32,12 +32,7 @@ class Top extends Component {
           >
             <DiffFilled twoToneColor={"#ffb947"} />
           </IconButton>
-          <Countdown
-            className={"ml-4 mr-4"}
-            title=""
-            value={deadline}
-            format="D 天 H 时 m 分 s 秒"
-          />
+
           <Typography variant={"h6"}>Movie Night</Typography>
 
           <Typography

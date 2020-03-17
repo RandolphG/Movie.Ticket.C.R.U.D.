@@ -7,7 +7,7 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      movies: [], // array of movies
+      movies: [],
       open: false
     };
   }
@@ -60,7 +60,6 @@ class App extends Component {
   async componentDidMount() {
     const movies = await findAllMovies();
     this.setState({ movies });
-    console.log(movies);
   }
 }
 

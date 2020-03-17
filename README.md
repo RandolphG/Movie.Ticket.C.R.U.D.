@@ -6,18 +6,7 @@ Open [http://localhost:30001](http://localhost:3000) to view it in the browser.
 
 ** a constant  `work`in process**
 
-### understanding `clsx` in React
- https://stackoverflow.com/questions/57557271/understanding-usage-of-clsx-in-react
-### React `animation` libraries
-https://areknawo.com/react-animation-libraries/
+![Image description](./../_ui_v_01.png)
 
-Animejs
-Greensock
-Libreact
-Pose
-React-Flip-Move
-React-Flip-Toolkit
-React-Motion
-React-Spring
-React-Transition-Group
-Yubaba
+
+![Image description](./../_ui_v_02.png)

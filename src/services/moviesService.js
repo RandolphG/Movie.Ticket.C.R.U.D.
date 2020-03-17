@@ -1,5 +1,5 @@
 /***
- *
+ * fall all movies
  * @returns {Promise<[]>}
  */
 export const findAllMovies = () => {
@@ -8,7 +8,7 @@ export const findAllMovies = () => {
     .then(data => data.movies);
 };
 /***
- *
+ * find movies by title
  * @param title
  * @returns {Promise<any>}
  */
@@ -18,7 +18,7 @@ export const findMovie = title => {
     .then(data => data.movie);
 };
 /***
- *
+ * create new movie entry
  * @param movie
  * @returns {Promise<void>}
  */
@@ -32,7 +32,7 @@ export const createMovie = movie => {
   );
 };
 /***
- *
+ * update movie details
  * @param title
  * @param movie
  */
@@ -46,7 +46,7 @@ export const updateMovie = (title, movie) => {
     .then(data => console.log("updated:", data));
 };
 /***
- *
+ * delete movie entry
  * @param title
  */
 export const deleteMovie = title => {
@@ -57,7 +57,7 @@ export const deleteMovie = title => {
     .then(data => console.log(data));
 };
 /***
- *
+ * add actors
  * @param title
  * @param actor
  */
@@ -69,7 +69,7 @@ export const addActor = (title, actor) => {
   }).then(res => res.ok && console.log("add success"));
 };
 /***
- *
+ * remove actors
  * @param title
  * @param actor
  */
