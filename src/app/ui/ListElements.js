@@ -8,7 +8,6 @@ import {
 } from "@material-ui/core";
 import TheatersIcon from "@material-ui/icons/Theaters";
 import Typography from "@material-ui/core/Typography";
-import Rating from "@material-ui/lab/Rating";
 
 class ListElements extends Component {
   constructor(props) {
