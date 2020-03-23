@@ -1,0 +1,50 @@
+/*remove vertical scrollbar*/
+::-webkit-scrollbar {
+    display: none;
+}
+
+.logo {
+    height: 32px;
+    background: rgba(255, 255, 255, 0.2);
+    margin: 16px;
+}
+
+.site-layout-sub-header-background {
+    background: #fff;
+}
+
+.site-layout-background {
+    background: #fff;
+}
+
+[data-theme="dark"] .site-layout-sub-header-background {
+    background: #141414;
+}
+/**/
+
+.site-form-in-drawer-wrapper {
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+    width: 100%;
+    padding: 10px 16px;
+    border-top: 1px solid #e9e9e9;
+    background: #fff;
+    text-align: right;
+}
+
+[data-theme="dark"] .site-form-in-drawer-wrapper {
+    border-top: 1px solid #303030;
+    background: #1f1f1f;
+}
+
+.login-form{
+    background: #FFFFFF;
+    padding: 50px;
+    min-height: 300px;
+}
+
+.input-icon{
+    width: 50vh;
+    text-align: center;
+}
