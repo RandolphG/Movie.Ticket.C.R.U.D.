@@ -9,8 +9,8 @@ import {
 
 /* component routes */
 import Container from "./ui/Container";
-import SignUp from "./ui/signup";
-import UserLogin from "./ui/userLogin";
+import SignUp from "./ui/SignUp";
+import Login from "./ui/Login";
 
 import posed, { PoseGroup } from "react-pose";
 const RoutesContainer = posed.div({
@@ -95,7 +95,7 @@ class App extends Component {
                     removeFromList={this.removeFromList}
                   />
                 ) : (
-                  <Redirect to={"/userlogin"} />
+                  <Redirect to={"/"} />
                 )
               }
             />
@@ -104,10 +104,7 @@ class App extends Component {
               exact
               path={"/"}
               render={props => (
-                <UserLogin
-                  history={props.history}
-                  handleLogin={this.handleLogin}
-                />
+                <Login history={props.history} handleLogin={this.handleLogin} />
               )}
             />
           </Switch>

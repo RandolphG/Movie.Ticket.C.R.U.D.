@@ -98,6 +98,7 @@ class Footer extends Component {
    */
   handleAdd = Transition => () => {
     console.log(`handleAdd called `);
+    this.props.showDrawer();
     this.props.addMovie();
     this.setState({ open: true, transition: Transition, operation: "ADDED" });
   };

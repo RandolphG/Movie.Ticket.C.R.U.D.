@@ -4,6 +4,7 @@ import {
   Badge,
   IconButton,
   Toolbar,
+  Tooltip,
   Typography
 } from "@material-ui/core";
 import { Statistic, Row, Col } from "antd";
@@ -46,9 +47,11 @@ class Top extends Component {
             {`${this.props.title}`}
           </Typography>
           <div style={{ flexGrow: 1 }} />
-          <Badge badgeContent={this.props.results}>
-            <TheatersIcon fontSize={"large"} color={"action"} />
-          </Badge>
+          <Tooltip placement={"left-end"} title={"movies in results"}>
+            <Badge badgeContent={this.props.results}>
+              <TheatersIcon fontSize={"large"} color={"action"} />
+            </Badge>
+          </Tooltip>
         </Toolbar>
       </AppBar>
     );

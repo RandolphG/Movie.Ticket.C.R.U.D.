@@ -4,7 +4,7 @@ import { UserOutlined, LockOutlined, LoginOutlined } from "@ant-design/icons";
 import "../App.css";
 import { AppBar, IconButton, Toolbar, Typography } from "@material-ui/core";
 
-class UserLogin extends Component {
+class Login extends Component {
   constructor(props) {
     super(props);
     this.state = { username: "", password: "" };
@@ -120,4 +120,4 @@ class UserLogin extends Component {
   }
 }
 
-export default UserLogin;
+export default Login;

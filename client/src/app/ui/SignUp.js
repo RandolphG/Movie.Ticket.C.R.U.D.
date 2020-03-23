@@ -1,9 +1,5 @@
 import React, { Component } from "react";
-
-import { Form, Input, Button, Checkbox } from "antd";
-import { UserOutlined, LockOutlined } from "@ant-design/icons";
-
-export default class Login extends Component {
+export default class SignUp extends Component {
   // noinspection MissingMethodCommentInspection
   constructor(props) {
     super(props);
@@ -11,33 +7,18 @@ export default class Login extends Component {
   }
 
   /**
-   * handle login
+   *
    * @param e
    */
-  handleSubmit = async e => {
+  handleSubmit = e => {
     e.preventDefault();
-    const token = await fetch("./api/users/login", {
+    fetch("./api/users/signup", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(this.state)
     })
       .then(res => res.json())
-      .then(data => data.token);
-
-    const base64 = token.split(".")[1];
-    const payload = JSON.parse(atob(base64));
-
-    this.props.handleLogin(
-      token,
-      {
-        _id: payload._id,
-        username: payload.username
-      },
-      () => {
-        this.props.history.push("/movies");
-      }
-    );
-    // console.log(token);
+      .then(data => data.user);
   };
 
   /**
@@ -73,6 +54,13 @@ export default class Login extends Component {
         />
         <br />
         <label>Full Name</label>
+        <br />
+        <input
+          name={"fullName"}
+          type={"text"}
+          value={this.state.fullName}
+          onChange={this.handleChange}
+        />
         <br />
         <input type={"submit"} />
       </form>

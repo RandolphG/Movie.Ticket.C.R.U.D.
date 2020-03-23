@@ -7,7 +7,16 @@ const { Option } = Select;
 class NewMovie extends Component {
   constructor(props) {
     super(props);
+    this.state = { title: "", rating: null };
   }
+
+  handleChange = e => {
+    this.setState({ [e.target.name]: e.target.value });
+  };
+  handleSelect = e => {
+    console.log(`selected ${e}`);
+    // this.setState({ : e.target.value });
+  };
 
   render() {
     return (
@@ -38,22 +47,30 @@ class NewMovie extends Component {
             <Row gutter={16}>
               <Col span={12}>
                 <Form.Item
-                  name="movie title"
+                  name="form"
                   label="Title"
                   rules={[{ required: true, message: " enter movie title" }]}
                 >
-                  <Input placeholder="enter movie title" />
+                  <Input
+                    onChange={this.handleChange}
+                    name={"title"}
+                    placeholder="enter movie title"
+                  />
                 </Form.Item>
               </Col>
               <Col span={12}>
                 <Form.Item
-                  name="type"
+                  name="mpaa"
                   label="Rating"
                   rules={[
                     { required: true, message: "Please choose the Rating" }
                   ]}
                 >
-                  <Select placeholder="Please choose the Rating">
+                  <Select
+                    defaultValue={"NC-17"}
+                    onChange={this.handleSelect}
+                    placeholder="Please choose the Rating"
+                  >
                     <Option value={"G"}>G</Option>
                     <Option value={"PG"}>PG</Option>
                     <Option value={"PG-13"}>PG-13</Option>

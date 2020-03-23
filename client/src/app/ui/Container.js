@@ -14,10 +14,10 @@ import posed from "react-pose";
 import pose from "popmotion-pose";
 
 /* sound files imports */
-import addSound from "../../sounds/wav/02 Alerts and Notifications/notification_decorative-01.wav";
-import deleteSound from "../../sounds/wav/02 Alerts and Notifications/notification_simple-02.wav";
-import selectSound from "../../sounds/wav/04 Secondary System Sounds/navigation_unavailable-selection.wav";
-import updateSound from "../../sounds/wav/03 Primary System Sounds/navigation_selection-complete-celebration.wav";
+import addSound from "../../sounds/wav/addSound.wav";
+import deleteSound from "../../sounds/wav/deleteSound.wav";
+import selectSound from "../../sounds/wav/selectSound.wav";
+import updateSound from "../../sounds/wav/updateSound.wav";
 import NewMovie from "./NewMovie";
 
 const AUDIO_SELECT = new Audio(selectSound);
@@ -103,11 +103,7 @@ class Container extends Component {
     this.setState({ operation: "ADDED" });
   };
 
-  componentWillMount() {
-    /*  fetch(`/api/users/${this.props.user.id}`),
-      { Authorization: ` Bearer ${this.props.token}` };
-  */
-  }
+  componentWillMount() {}
 
   /**
    *
@@ -170,6 +166,7 @@ class Container extends Component {
           </div>
         )}
         <Footer
+          showDrawer={this.showDrawer}
           operation={this.state.operation}
           title={this.state.title}
           movies={this.props.movies}
