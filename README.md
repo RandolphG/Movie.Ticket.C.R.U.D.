@@ -1,9 +1,9 @@
 # Movie Ticket
 
-![Movie Ticket](https://github.com/RandolphG/Application/blob/master/public/_movie_ticket.gif?raw=true)
+![Movie Ticket](https://github.com/RandolphG/Application/blob/master/client/public/_movie_ticket.gif?raw=true)
 
 ### Installation process :
-
+****
 - clone repo
 - navigate to project folder
 - install all dependencies with npm
